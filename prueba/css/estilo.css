@@ -1,0 +1,467 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(to right, rgb(39, 70, 133) 0%, rgb(61, 179, 197) 100%);
+	font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+    
+    padding: 5px 10px;
+    background-color: black;
+    transition: all 0.5s;
+    z-index: 997;
+    position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+ 
+  }
+
+
+.contenedor {
+	width: 90%;
+	margin: auto;
+}
+
+
+ul {
+    list-style-type: none;
+}
+  
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: none;
+}
+.logo a:hover {
+    text-decoration: none;
+}
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+.logo a,
+.toggle a {
+    font-size: 20px;
+    
+  }
+  
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle {
+    
+    order: 1;
+  }
+.item.button {
+    order: 2;
+  }
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+
+  .item a:hover{
+    color: rgb(61, 179, 197);
+ } 
+
+ 
+.active {
+    display: block;
+  }
+
+
+ @media all and (min-width: 480px) {
+.menu {
+      justify-content: center;
+    }
+.logo {
+      flex: 1;
+    }
+.toggle {
+      flex: 1;
+      text-align: right;
+    }
+    
+.toggle {
+      order: 2;
+    }
+
+  }
+  
+
+@media all and (min-width: 768px) {
+.item {
+      display: block;
+      width: auto;
+    }
+.toggle {
+      display: none;
+    }
+.logo {
+      order: 0;
+    }
+.item {
+      order: 1;
+    }
+    
+.menu li {
+      padding: 15px 10px;
+    }
+.nav{
+        background-color: #fff;
+    }
+
+   
+  }
+
+
+  
+header {
+  display: block;
+}
+
+#boton-inicio {
+  background-color: rgb(61, 179, 197);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+#boton-inicio:hover {
+  background-color: rgb(39, 70, 133);
+  color: #fff;
+}
+
+#boton-logo {
+  background-color: rgb(61, 179, 197);
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+footer {
+  left:0px;
+  bottom:0px;
+  height:60px;
+  width:100%;
+  color: white;
+  background:black;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.redes{
+  padding-top: 5px;
+  padding: 2.5px;
+}
+
+p{
+  text-align: center;
+}
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+
+
+/* ---- ----- ----- Contenedor Peliculas y Flechas ----- ----- ----- */
+.peliculas-novedades {
+	margin-top: 120px;
+    width: 90%;
+    margin-bottom: 70px;
+}
+
+
+.peliculas-novedades .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+    
+}
+
+.peliculas-novedades .contenedor-principal .flecha-izquierda,
+.peliculas-novedades .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 30%;
+	top: calc(60% - 25%);
+	line-height: 40px;
+	width: 30px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+	
+}
+
+.peliculas-novedades .contenedor-principal .flecha-izquierda:hover,
+.peliculas-novedades .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.peliculas-novedades .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.peliculas-novedades .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+
+.peliculas-novedades .contenedor-carousel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+    
+}
+
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+
+
+
+	.peliculas-novedades .flecha-izquierda,
+	.peliculas-novedades .flecha-derecha {
+		display: none;
+	}
+
+  
+  
+}
+
+
+
+  section{
+    position: relative;  
+    
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+/* ---- ----- ----- Card de las peliculas y series ----- ----- ----- */
+.card{
+    border-radius: 15px;
+    width:180px;
+    height:400px;
+    background-image: linear-gradient(to top, #AEC0CE, #ECECF2);
+    overflow: hidden;
+    transition: 0.5s;
+    margin:10px;
+    scroll-snap-align: start;
+    display:inline-block;
+  position:relative;
+}
+
+.card .avatar{
+    display: block;
+    /* margin:50px auto 10px; */
+    width:100%;
+    height:70%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px #7e878d;
+}
+
+.card .content{
+	margin-left: 5px;
+	margin-right: 5px;
+    padding-top: 10px;
+    font-family: monospace;
+}
+
+
+/* Boton para ver trailer y sinopsis */
+.card .boton{
+  background-color: #362464;
+    color: #ffffff; 
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+  
+}
+
+.card .boton:hover{
+  background-color: #8b5efc;
+  
+  
+}
+
+.card .content table{
+	
+	width: 100%;
+}
+.card .content table td{
+	font-weight: bold;
+    padding:10px 0;
+    border-bottom: 1px solid #AEC0CE;
+	
+}
+
+
+
+#list, #listSeries, #listNov{
+  display: flex;
+  width:max-content;
+}
+#formList, #formListSeries, #formListNov {
+  width:1200px;
+  max-width: 100%;
+  overflow: auto;
+  margin:10px auto 10px;
+  scroll-behavior: smooth;
+  scroll-snap-type: both;
+}
+#formList::-webkit-scrollbar, #formListSeries::-webkit-scrollbar , #formListNov::-webkit-scrollbar{
+  display: none;
+}
+
+/* ---- ----- ----- Paginacion de las peliculas y series ----- ----- ----- */
+.paginacion {
+
+display: flex;
+justify-content: center;
+gap: 20px;
+
+}
+
+
+.paginacion button {
+cursor: pointer;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+/* height: 20px;
+width: 100px; */
+/* background: #230966; */
+color: #fff;
+/* border-radius: 100px; */
+width:50px;
+  height:50px;
+transition: .3s ease all;
+
+
+
+  font-family: cursive;
+  font-weight: bold;
+  background-color: #ffffff44;
+  
+
+  border-radius: 50%;
+}
+
+.paginacion button:hover {
+background: #362464;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    margin-top: 90px;
+    width: 90%;
+  }
+
+  iframe{
+    width: 540px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    margin-top: 90px;
+    width: 90%;
+    
+  }
+
+  .modal-content{
+    height: 70%;
+    overflow-y:scroll;
+  }
+
+  iframe{
+    width: 250px;
+    height: 150px;
+  }
+}
+
+/* ---- ----- ----- Modal de trailers y sinopsis ----- ----- ----- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
